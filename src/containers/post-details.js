@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 import PostAuthor from './post-author';
 
 class PostDetails extends Component {
+	renderPosts(postData) {
+		return(
+     	<div key={ postData.id }>
+	    	<div className="post-details-img">
+	      	<img src={ postData.image_url } />
+	    	</div>
+	    	<div className="post-details-info">
+	    		<h3>{postData.title }</h3>
+	    		<p>{ postData.body }</p>
+	    		<p><span>{ postData.created_at }</span></p>
+	    	</div>
+	    	<PostAuthor />
+    	</div>
+   	);
+		console.log(postData);
+	}
+
   render() {
     return (
       <div className="post-details">
-      	<div className="post-details-img">
-	      	<img src="" />
-      	</div>
-      	<div className="post-details-info">
-      		<h3>Post Title</h3>
-      		<p>Post Content</p>
-      		<p><span>Post Timeframe</span></p>
-      	</div>
-      	<PostAuthor />
+      	{ this.props.posts.map(this.renderPosts) }
       </div>
     );
   }

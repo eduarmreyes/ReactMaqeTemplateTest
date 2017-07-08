@@ -20,7 +20,6 @@ class PostList extends Component {
   render() {
     return (
       <div className="post-list">
-      	Post List
       	<PostDetails />
       </div>
     );
