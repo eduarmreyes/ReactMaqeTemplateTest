@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class PostAuthor extends Component {
   render() {
     return (
-      <div className="post-author">
+      <div className="col-md-4 post-author">
         <div className="post-author-rounded-img">
           <img src="" />
         </div>

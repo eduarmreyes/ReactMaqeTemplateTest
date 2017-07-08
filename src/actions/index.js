@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
-export const ROOT_URL = 'http://maqe.github.io/json/posts.json';
+// export const ROOT_URL = 'http://maqe.github.io/json/posts.json';
+export const ROOT_URL = '../api/posts.json';
 
 export function fetchPostDetails() {
 	// we use it like this because we want to make it modular

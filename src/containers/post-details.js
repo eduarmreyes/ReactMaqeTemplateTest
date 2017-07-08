@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import timeago from 'timeago.js';
 
 import PostAuthor from './post-author';
 
 class PostDetails extends Component {
 	renderPosts(postData) {
 		return(
-     	<div key={ postData.id }>
-	    	<div className="post-details-img">
+     	<div key={ postData.id } className='row post-details-wrapper'>
+	    	<div className='col-md-2 post-details-img'>
 	      	<img src={ postData.image_url } />
 	    	</div>
-	    	<div className="post-details-info">
+	    	<div className='col-md-6 post-details-info'>
 	    		<h3>{postData.title }</h3>
 	    		<p>{ postData.body }</p>
-	    		<p><span>{ postData.created_at }</span></p>
+	    		<p className="post-details-time-ago"><span><i className="fa fa-clock-o" aria-hidden="true"></i> { timeago().format(postData.created_at) }</span></p>
 	    	</div>
 	    	<PostAuthor />
     	</div>
@@ -23,7 +24,7 @@ class PostDetails extends Component {
 
   render() {
     return (
-      <div className="post-details">
+      <div className='post-details'>
       	{ this.props.posts.map(this.renderPosts) }
       </div>
     );
