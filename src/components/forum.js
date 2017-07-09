@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ForumDetails from './forum-details';
-
-// actions
 import PostList from '../containers/post-list';
+import ForumPagination from './forum-pagination';
 
 export default class Forum extends Component {
 	render() {
@@ -10,6 +9,7 @@ export default class Forum extends Component {
       <div className="forum">
       	<ForumDetails />
       	<PostList />
+      	<ForumPagination />
       </div>
     );
 	}
